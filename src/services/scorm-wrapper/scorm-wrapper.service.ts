@@ -137,8 +137,8 @@ export class ScormWrapperService {
   }
 
   public getAPIHandle() {
-
-    if (this.win.parent && this.win.parent !== this.win) {
+    //  Changed condition since this was getting skipped for Angular 9 app
+    if (this.win.parent && this.win.parent == this.win) {
       this.findAPI(this.win.parent);
     }
 
